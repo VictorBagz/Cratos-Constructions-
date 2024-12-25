@@ -2,137 +2,99 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale =1.0"/>
-    <title>Cratos Building Solutions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Navigation Bar</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous"/>
     <style>
-        .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #333;
-  color: #fff;
-  padding: 1em;
-  display: flex;
-  
-  align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-.navbar-brand {
-  display: inline-block;
-  margin-right: 20px;
+.navbar {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
 }
 
 .navbar-brand h5 {
-  display: inline-block;
-  font-size: 1.5em;
-  font-weight: bold;
-  margin: 0;
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
 .menu-icon {
-  display: inline-block;
-}
-
-.menu-label {
-  
-  display: block;
-  padding: 10px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
 }
 
 .menu-span {
-  display: block;
-  width: 20px;
-  height: 2px;
-  background-color: #fff;
-  margin-bottom: 5px;
-  transition: all 0.3s ease-in-out;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: all 0.3s ease-in-out;
 }
 
-.menu-label:hover .menu-span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.menu-label:hover .menu-span:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-label:hover .menu-span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-.dropdown-content {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: none;
-}
-
-.menu-label:hover + .dropdown-content {
-  display: block;
-}
-
-.dropdown-content li {
-  margin-bottom: 10px;
-}
-
-.dropdown-content a {
-  color: #fff;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
-}
-
-.dropdown-content a:hover {
-  color: #ccc;
-}
-h1,h2,h3,h4,h5{
-    text-align:center;
-    margin-top:20px;
-}
-/* Media Query for Mobile Devices */
-
-@media only screen and (max-width: 768px) {
-  .nav-bar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .menu-icon {
-    display: block;
-  }
-  
-  .nav-links {
+.nav-content {
     display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: #333;
-    padding: 1em;
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 0;
     left: 0;
     width: 100%;
-  }
-  
-  .nav-links li {
-    margin-bottom: 10px;
-  }
-  
-  .nav-links a {
-    color: #fff;
-  }
-  
-  .menu-icon:hover + .nav-links {
-    display: block;
-  }
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
+
+.nav-content ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.nav-content ul li {
+    margin: 20px 0;
+}
+
+.nav-content ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 2em;
+}
+
+.menu-icon.open .menu-span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-icon.open .menu-span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icon.open .menu-span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.nav-content.open {
+    display: flex;
+}
+
+
+
 
 
 
@@ -366,6 +328,7 @@ h1,h2,h3,h4,h5{
        background-color :#ffd295e4;
        margin:40px 20px;
    }
+
    .firstsection i{
        display :block;
        padding :30px ;
@@ -380,6 +343,7 @@ h1,h2,h3,h4,h5{
    #mediaicons{
        margin:50px 0px;
    }
+   
    #footer_icons{
        font-style:normal ;
        text-align :center;
@@ -394,24 +358,24 @@ h1,h2,h3,h4,h5{
     </style>
 </head>
 <body>
- <nav class="navbar">
-  <div class="navbar-brand">
-    <h5>CRATOS CONSTRUCTIONS</h5>
-  </div>
-  <div class="menu-icon">
-    <label class="menu-label">
-      <span class="menu-span"></span>
-      <span class="menu-span"></span>
-      <span class="menu-span"></span>
-    </label>
-    <ul class="dropdown-content">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">About</a></li>
-    </ul>
-  </div>
- </nav>
-<div class="containers">
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <h5>CRATOS CONSTRUCTIONS</h5>
+        </div>
+        <div class="menu-icon" id="menu-icon">
+            <span class="menu-span"></span>
+            <span class="menu-span"></span>
+            <span class="menu-span"></span>
+        </div>
+    </nav>
+    <div class="nav-content" id="nav-content">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contacts">Contacts</a></li>
+        </ul>
+    </div>
+    <div class="containers">
 <img class="img1" src="Logo2.jpg" alt="Construction site"></div>
 <button class="btn1"><b>Contact Info</b></button>
 <button class="btn2"><b>About us</b></button>
@@ -587,10 +551,8 @@ h1,h2,h3,h4,h5{
 </footer>
 
 
-
-
-<script>
-var acc = document.getElementsByClassName("accordion");
+    <script>
+  var acc = document.getElementsByClassName("accordion");
 var i;
 
 for (i = 0; i < acc.length; i++) {
@@ -604,7 +566,10 @@ for (i = 0; i < acc.length; i++) {
     } 
       });
 }
-</script>
-
+        document.getElementById('menu-icon').addEventListener('click', function() {
+    this.classList.toggle('open');
+    document.getElementById('nav-content').classList.toggle('open');
+});
+    </script>
 </body>
 </html>
