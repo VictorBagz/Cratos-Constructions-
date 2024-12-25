@@ -547,7 +547,7 @@
 </section>
 </div>
 <footer>
-    <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/cratoslogo.jpg"/>
+ <img src="Logo3.jpg"/>
 </footer>
 
 
