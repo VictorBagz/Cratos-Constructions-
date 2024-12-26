@@ -451,7 +451,7 @@
     </div>
   
     <div class="image-container" id="container4">
-      <a href="#image4"><img src="building5.jpg" /></a>
+      <a href="#image4"><img src="IMG-20241215-WA0004.jpg"/></a>
       <p class="image-description"> Lorem ipsum dolor sit amet. </p>
     </div>
   
